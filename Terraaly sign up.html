@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up - Terraaly</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #333; 
+        }
+
+        .signup-container {
+            height: 100%;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .right-panel { 
+            flex: 1;
+            background: linear-gradient(to top left, #8fcf81, #a7d795);
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2em;
+        }
+
+        .right-panel h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+
+        .right-panel p {
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        .left-panel {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFF;
+            box-shadow: 10px 0 20px rgba(0, 0, 0, 0.05); /* Shadow on the opposite side */
+        }
+
+        .signup-form {
+            width: 90%;
+            max-width: 400px;
+            padding: 2em;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup-form h2 {
+            color: #4a7c59;
+            font-size: 2em;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 1.5em;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="email"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #8fcf81;
+        }
+
+        .btn-signup {
+            width: 100%;
+            padding: 10px;
+            background-color: #4a7c59;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-signup:hover {
+            background-color: #3a6247; /* Changes color on hover */
+        }
+
+        .social-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 1.5em;
+        }
+
+        .social-button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-button:hover {
+            opacity: 0.8;
+        }
+
+        .google {
+            background-color: #db4437;
+        }
+
+        .facebook {
+            background-color: #4267b2;
+        }
+
+        .error {
+            color: #38bb2c;
+            margin-top: 1.5em;
+            text-align: center;
+        }
+
+        a {
+            color: #f3ebeb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="left-panel">
+            <div class="signup-form">
+                <h2>Sign Up</h2>
+                <form action="signup.php" method="POST">
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Create a password">
+                    </div>
+                    <div class="input-group">
+                        <label for="confirm-password">Repeat Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
+                    </div>
+                    <button type="submit" class="btn-signup">Sign Up</button>
+                </form>
+                <div class="social-buttons">
+                    <a href="https://accounts.google.com/signup" class="social-button google">Sign up with Google</a>
+                    <a href="https://www.facebook.com/r.php" class="social-button facebook">Sign up with Facebook</a>
+                </div>
+                <p class="error">Already have an account? <a href="login.php">Log in</a> here!</p>
+            </div>
+        </div>
+        <div class="right-panel">
+            <h1>Welcome to Terraaly</h1>
+            <p>Empower your farming with smart solutions.</p>
+        </div>
+    </div>
+</body>
+</html>
