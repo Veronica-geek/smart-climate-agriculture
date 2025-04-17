@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - TerraAly</title>
+    <script src="./blog_script.js"></script>
+    <link rel="stylesheet" href="./blog_style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="/media/transparent_without_m.png" alt="TerraAly Logo" class="logo">
+        </div>
+        <h1 class="site-title">TerraAly</h1>
+        <nav class="nav-links">
+            <a class="home-anchor-btn">Home |</a>
+            <a class="signup-anchor-btn">Sign Up |</a>
+            <a class="login-anchor-btn">Login |</a>
+            <a class="crop_recommendation-anchor-btn">Crop Recommendations |</a>
+            <a class="blog-anchor-btn">Blog |</a>
+            <a class="about-anchor-btn">About |</a>
+            <a class="logout-anchor-btn">Logout</a>
+
+        </nav>
+    </header>
+    <div class="quick-links-container">
+        <div class="quick-links">
+            <a href="#articles">Articles</a> |
+            <a href="#videos">Videos</a>
+        </div>
+    </div>
+    <section class="content-section articles-section" id="articles">
+        <div class="main-content">
+            <h2>Articles</h2>
+            <div class="article-viewer">
+                <iframe id="articleViewer" src="" frameborder="0" width="100%" height="800px"></iframe>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <!-- <button id="toggleSidebar">Toggle Sidebar</button> -->
+            <h3>Available Articles</h3>
+            <ul id="articleList"></ul>
+        </aside>
+    </section>
+
+    <section class="content-section video-section" id="videos">
+        <h2>Videos</h2>
+        <div class="content-item">
+            <h3><strong>Types of Irrigation Systems</strong></h3>
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/Z9HAy9EYKKs" frameborder="0"
+                allowfullscreen></iframe>
+            <p class="video-description">Different Types of irrigation systems in Agriculture | Drip, Gun Sprinkler,
+                Center pivot irrigation</p>
+            <!-- <div class="interaction">
+                <button class="like-btn">Like (0)</button>
+                <button class="share-btn">Share</button>
+                <input type="text" class="feedback-input" placeholder="Leave a comment...">
+                <button class="feedback-btn">Submit</button>
+            </div> -->
+        </div>
+        <div class="content-item">
+            <h3><strong>Soil Preparation Tips</strong></h3>
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/7-Tyz7fGeZo" frameborder="0"
+                allowfullscreen></iframe>
+            <p class="video-description">Soil is the foundation for an abundant and healthy garden. Here are 5 tips
+                that will build you awesome soil.</p>
+            <!-- <div class="interaction">
+                <button class="like-btn">Like (0)</button>
+                <button class="share-btn">Share</button>
+                <input type="text" class="feedback-input" placeholder="Leave a comment...">
+                <button class="feedback-btn">Submit</button>
+            </div> -->
+        </div>
+        <div class="content-item">
+            <h3><strong>How to Start a Small Farm | A Step-by-Step Guide</strong></h3>
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/heTxEsrPVdQ" frameborder="0"
+                allowfullscreen></iframe>
+            <p class="video-description">In today's video we get into the nuts and bolts of what you should actually do to start a successful farm business. 
+                We cover: how to start a farm from scratch, how to start a farm business, what does it cost to start a farm business, farm business plans, how to start a farm with no money or land, and more.</p>
+            <!-- <div class="interaction">
+                <button class="like-btn">Like (0)</button>
+                <button class="share-btn">Share</button>
+                <input type="text" class="feedback-input" placeholder="Leave a comment...">
+                <button class="feedback-btn">Submit</button>
+            </div> -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/media/transparent_without_m.png" alt="TerraAly Logo" class="footer-logo-img">
+                <p>TerraAly - Growing a sustainable future, one farm at a time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a class="about-anchor-btn" href="/about">About</a></li>
+                    <li><a class="crop_recommendation-anchor-btn" href="/crop_recommendation">Crop Recommendations</a>
+                    </li>
+                    <li><a class="signup-anchor-btn">Sign Up</a></li>
+                    <li><a class="login-anchor-btn">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><strong>Email:</strong> <a href="mailto:terraalyfarming@gmail.com">terraalyfarming@gmail.com</a></p>
+                <p><strong>Location:</strong> Nairobi, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,554 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    background-color: #E8ECEB; /* Light gray background */
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #708090; /* Slate Gray */
+}
+
+/*********************navigation style**********************/
+.header {
+    display: flex;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: #FFF;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-radius: 10px;
+  }
+  
+  .logo-container {
+    margin-right: 2em;
+  }
+  
+  .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #FAF3E0; /* Soft Cream border for contrast */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .site-title {
+    color: #708238; /* Olive Green */
+    font-size: 2.5em;
+    font-family: 'Georgia', serif; /* Beautiful font */
+    font-weight: bold;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .nav-links {
+    margin-left: auto;
+  }
+  
+  .nav-links a {
+    color: #708238; /* Olive Green */
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-left: 1.5em;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #D2B48C; /* Clay Brown */
+    text-decoration: underline;
+  }
+  
+  .nav-links .sign-in {
+    background-color: #708238; /* Olive Green */
+    color: #FAF3E0; /* Soft Cream */
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-links .sign-in:hover {
+    background-color: #D2B48C; /* Clay Brown */
+  }
+  /*******************************************/
+
+.admin-dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #E8ECEB; /* Light gray background */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #4A7040; /* Darker Olive Green */
+    padding: 2em 1em;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100%;
+    color: #FAF3E0; /* Soft Cream */
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.sidebar-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 0.5em;
+}
+
+.sidebar h2 {
+    color: #FAF3E0; /* Soft Cream */
+    font-size: 1.5em;
+    font-family: 'Georgia', serif;
+}
+
+.sidebar-menu .menu-item {
+    display: block;
+    color: #FAF3E0; /* Soft Cream */
+    text-decoration: none;
+    padding: 0.8em 1em;
+    margin-bottom: 0.5em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-menu .menu-item:hover {
+    background-color: #708238; /* Olive Green */
+}
+
+/* Weather Widget in Sidebar */
+.weather-widget-sidebar {
+    margin-top: 2em;
+    padding: 1em;
+    background-color: #708238; /* Olive Green */
+    border-radius: 5px;
+    text-align: center;
+}
+
+.weather-widget-sidebar h3 {
+    color: #FAF3E0; /* Soft Cream */
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+}
+
+.weather-widget-sidebar p {
+    color: #FAF3E0; /* Soft Cream */
+    font-size: 0.9em;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 2em;
+    flex-grow: 1;
+}
+
+/* Header */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: #FFF;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header h1 {
+    color: #708238; /* Olive Green */
+    font-size: 2em;
+    font-family: 'Georgia', serif;
+}
+
+.admin-header-right {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.notification-icon {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #708238; /* Olive Green */
+    transition: color 0.3s ease;
+}
+
+.notification-icon:hover {
+    color: #D2B48C; /* Clay Brown */
+}
+
+/* .profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+} */
+
+.admin-header-right span {
+    color: #708090; /* Slate Gray */
+    font-size: 1em;
+}
+
+/* Sections */
+.admin-section {
+    background-color: #FFF;
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+}
+
+.admin-section h2 {
+    color: #708238; /* Olive Green */
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.card {
+    padding: 1em;
+    border: 1px solid #E8ECEB;
+    border-radius: 5px;
+}
+
+.card h3 {
+    color: #708090; /* Slate Gray */
+    margin-bottom: 0.5em;
+}
+
+.deactivate-btn, .activate-btn, .delete-btn {
+    margin-left: 1em;
+}
+
+.action-btn {
+    background-color: #708238; /* Olive Green */
+    color: #FAF3E0; /* Soft Cream */
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #D2B48C; /* Clay Brown */
+}
+
+.delete-btn {
+    background-color: #D9534F; /* Red for delete */
+}
+
+.delete-btn:hover {
+    background-color: #C9302C;
+}
+
+input[type="text"], input[type="number"], input[type="file"] {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #FAF3E0; /* Soft Cream */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #E8ECEB;
+}
+
+/* Weather Widget in Main Content */
+.weather-widget {
+    margin-top: 1em;
+    padding: 1em;
+    background-color: #FAF3E0; /* Soft Cream */
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.weather-widget h3 {
+    color: #708238; /* Olive Green */
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.weather-widget p {
+    color: #708090; /* Slate Gray */
+    font-size: 0.9em;
+    margin: 0.3em 0;
+}
+
+/* Performance Chart */
+#performanceChart {
+    max-width: 100%;
+}
+
+/* Reports Output */
+#reportOutput {
+    margin-top: 1em;
+    padding: 1em;
+    background-color: #E8ECEB;
+    border-radius: 5px;
+    color: #708090; /* Slate Gray */
+}
+
+/* Footer (Optional - Added for Completeness) */
+footer {
+    background-color: #708238; /* Olive Green */
+    color: #FAF3E0; /* Soft Cream */
+    padding: 1em;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1em;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 1em;
+    }
+    .admin-header {
+        flex-direction: column;
+        gap: 1em;
+    }
+    .admin-header-right {
+        flex-direction: column;
+        text-align: center;
+    }
+    .notification-icon {
+        margin-bottom: 0.5em;
+    }
+    .weather-widget-sidebar {
+        margin-top: 1em;
+        padding: 0.5em;
+    }
+    .weather-widget {
+        padding: 0.5em;
+    }
+}
+
+ /**************************profile style**************************/
+ .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-name {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+button {
+    background-color: #4a772f;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/*******************dialog style**********************/
+
+dialog{
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 45%;
+    left: 45%;
+  }
+  
+  dialog form{
+    display: flex;
+    flex-direction: column;
+  }
+
+  dialog input{
+  margin-bottom: 10px;
+  padding: 8px;
+  }
+
+
+#open_dialog_button {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+}
+
+#open_dialog_button:hover {
+  background-color: #D2B48C; /* Clay Brown */
+} 
+h1, h2 {
+    color: #4a772f;
+  }
+
+  select, .dialog_btn {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .dialog_btn {
+    background-color: #4a772f;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .dialog_btn:hover {
+    background-color: #3e6225;
+  }
+  
+
+  /***************************report style******************************/
+  .report-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .report-container h2 {
+    color: #4a772f;
+    margin-bottom: 20px;
+  }
+  
+  .report-buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+ 
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .report-buttons button:disabled {
+    background-color: #c4c4c4;
+    cursor: not-allowed;
+  }
+  
+  .report-buttons button:hover:enabled {
+    background-color: #D2B48C;
+  }
+  
+  .report-content {
+    margin-top: 20px;
+    text-align: left;
+    color: #333333;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .loading-spinner.hidden {
+    display: none;
+  }
+  
+  .search-bar {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .pagination button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    background-color: #4a772f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #D2B48C;
+  }
+  
+  .pagination button:hover {
+    background-color: #D2B48C;
+  }
+  
