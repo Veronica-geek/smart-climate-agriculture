@@ -1,6 +1,9 @@
 let cropChart = null;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 export async function fetchChartData(location) {
     const response = await fetch(`http://localhost:5000/recommendation/crop_suitability?location=${location}`);
     const data = await response.json();
@@ -26,6 +29,23 @@ function renderCropChart(crops) {
         return (min + max) / 2; // Average harvest time
     });
 
+<<<<<<< HEAD
+=======
+    // Define colorful background colors for each bar
+    const backgroundColors = [
+        'rgba(255, 99, 132, 0.2)',   // Red
+        'rgba(54, 162, 235, 0.2)',   // Blue
+        'rgba(255, 206, 86, 0.2)',   // Yellow
+        'rgba(75, 192, 192, 0.2)',   // Teal
+        'rgba(153, 102, 255, 0.2)',  // Purple
+        'rgba(255, 159, 64, 0.2)',   // Orange
+        'rgba(0, 128, 0, 0.2)',      // Green
+        'rgba(128, 0, 128, 0.2)',    // Purple
+        'rgba(255, 0, 0, 0.2)',      // Red
+        'rgba(0, 255, 0, 0.2)'       // Lime
+    ];
+
+>>>>>>> master
     cropChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -33,8 +53,13 @@ function renderCropChart(crops) {
             datasets: [{
                 label: 'Average Time to Harvest (Days)',
                 data: data,
+<<<<<<< HEAD
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
+=======
+                backgroundColor: labels.map((_, index) => backgroundColors[index % backgroundColors.length]),
+                borderColor: labels.map((_, index) => backgroundColors[index % backgroundColors.length].replace('0.2', '1')),
+>>>>>>> master
                 borderWidth: 1,
             }],
         },
@@ -51,16 +76,36 @@ function renderCropChart(crops) {
                     title: {
                         display: true,
                         text: 'Time to Harvest (Days)',
+<<<<<<< HEAD
                     },
+=======
+                        color: '#333333'
+                    },
+                    ticks: {
+                        color: '#333333'
+                    }
+>>>>>>> master
                 },
                 x: {
                     title: {
                         display: true,
                         text: 'Crops',
+<<<<<<< HEAD
                     },
+=======
+                        color: '#333333'
+                    },
+                    ticks: {
+                        color: '#333333'
+                    }
+>>>>>>> master
                 },
             },
         },
     });
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> master

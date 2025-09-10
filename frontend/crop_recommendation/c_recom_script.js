@@ -3,16 +3,23 @@ import { fetchChartData } from './bar_chart_script.js';
 let urlSearchParams = new URL(window.location.href).searchParams;
 let userPhoneNumber = urlSearchParams.get('phoneNumber');
 
+<<<<<<< HEAD
 
 document.addEventListener("DOMContentLoaded", async function () {
 
+=======
+document.addEventListener("DOMContentLoaded", async function () {
+>>>>>>> master
   await loadProfileDetail();
   await displayLocationOptions();
   await isUserStatusActive() ? addPageEventListeners() : showDeactivatedOverlay();
   await addDownloadReportListener();
   addLocationSelectionListener();
   addHrefNavigationPaths(userPhoneNumber);
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 });
 
 async function addPageEventListeners() {
@@ -22,7 +29,10 @@ async function addPageEventListeners() {
   await addCloseDialogListener();
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 async function addRecommendCropListener() {
   document.getElementById('locationForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -34,19 +44,30 @@ async function addRecommendCropListener() {
       return;
     }
 
+<<<<<<< HEAD
     // Show the spinner overlay
     const spinnerOverlay = document.getElementById('spinner-overlay');
     spinnerOverlay.style.display = 'flex';
 
 
+=======
+    const spinnerOverlay = document.getElementById('spinner-overlay');
+    spinnerOverlay.style.display = 'flex';
+
+>>>>>>> master
     try {
       const response = await fetch(`http://localhost:5000/recommendation/crop_recommendation?location=${location}`);
       const data = await response.json();
 
+<<<<<<< HEAD
       // Hide the spinner overlay
       spinnerOverlay.style.display = 'none';
 
       // Display weather
+=======
+      spinnerOverlay.style.display = 'none';
+
+>>>>>>> master
       const weatherDiv = document.getElementById('weather');
       weatherDiv.innerHTML = `
           <p><strong>Time:</strong> ${data.weather.time}</p>
@@ -55,7 +76,10 @@ async function addRecommendCropListener() {
           <img src="https://openweathermap.org/img/wn/${data.weather.icon}@2x.png" alt="${data.weather.description}" />
         `;
 
+<<<<<<< HEAD
       // Display soil data
+=======
+>>>>>>> master
       const soilDiv = document.getElementById('soil');
       soilDiv.innerHTML = `
           <p><strong>Type:</strong> ${data.soil.type}</p>
@@ -63,9 +87,14 @@ async function addRecommendCropListener() {
           <p><strong>Moisture Content:</strong> ${data.soil.moisture_min}% - ${data.soil.moisture_max}%</p>
         `;
 
+<<<<<<< HEAD
       // Display suitable crops
       const cropsList = document.getElementById('crops');
       cropsList.innerHTML = data.crops.map(crop => `<div>${crop}</div>`).join('');
+=======
+      const cropsList = document.getElementById('crops');
+      cropsList.innerHTML = data.crops.map((crop, index) => `<div>${index + 1}. ${crop}</div>`).join('');
+>>>>>>> master
 
       fetchChartData(location);
       downloadReportBtnElem.disabled = false;
@@ -82,7 +111,10 @@ async function addOpenDialogListener() {
     const dialog = document.getElementById('profileDialog');
     dialog.showModal();
   });
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 }
 
 async function addCloseDialogListener() {
@@ -99,7 +131,10 @@ async function addUpdateProfileListener() {
     let username = document.getElementById('newUsername').value;
     const profileImageInput = document.getElementById("newProfileImage").files[0];
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     if (!username || !profileImageInput) {
       alert("Please enter a title and select a file.");
       return;
@@ -135,9 +170,13 @@ async function addUpdateProfileListener() {
   });
 }
 
+<<<<<<< HEAD
 
 async function loadProfileDetail() {
   // redirect the user to login page if phone number is not provided
+=======
+async function loadProfileDetail() {
+>>>>>>> master
   if (userPhoneNumber === null) {
     window.location.href = '/login';
     return;
@@ -149,8 +188,12 @@ async function loadProfileDetail() {
 
     const profileImgElem = document.getElementById('profile-img');
 
+<<<<<<< HEAD
 
     if (profileDetail.profile_image !== null || profileDetail.profile_image == '') {
+=======
+    if (profileDetail.profile_image && profileDetail.profile_image !== '') {
+>>>>>>> master
       profileImgElem.src = `http://localhost:5000/backend${profileDetail.profile_image}`;
     } else {
       profileImgElem.src = `/media/profile_image_placeholder.png`;
@@ -163,6 +206,7 @@ async function loadProfileDetail() {
     console.error("Error fetching profileDetail:", error);
     document.getElementById("profileImageContainer").innerHTML = "<div>Error loading Profile details</div>";
   }
+<<<<<<< HEAD
 };
 
 
@@ -179,6 +223,20 @@ async function isUserStatusActive() {
       console.log("Unable to get user status");
     }
 
+=======
+}
+
+async function isUserStatusActive() {
+  try {
+    const response = await fetch(`http://localhost:5000/users/get_user_status?phoneNumber=${userPhoneNumber}`);
+    const { status } = await response.json();
+    if (response.ok) {
+      console.log(`user status: ${status}`);
+      return status === 'active';
+    } else {
+      console.log("Unable to get user status");
+    }
+>>>>>>> master
   } catch (error) {
     console.error('Error checking user status:', error);
   }
@@ -191,18 +249,26 @@ function showDeactivatedOverlay() {
   overlayElem.classList.remove('hidden');
   bodyElem.style.filter = 'grayscale(100%)';
   bodyElem.style.pointerEvents = 'none';
+<<<<<<< HEAD
 
 }
 
 
 /*********************************navigation code*************************************/
+=======
+}
+
+>>>>>>> master
 async function addHrefNavigationPaths(userPhoneNumberSearchParam) {
   const homeAnchors = document.querySelectorAll('.home-anchor-btn');
   homeAnchors.forEach((anchor, _) => {
     anchor.href = `/home?phoneNumber=${userPhoneNumberSearchParam}`;
   });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
   const blogAnchors = document.querySelectorAll('.blog-anchor-btn');
   blogAnchors.forEach((anchor, _) => {
     anchor.href = `/blog?phoneNumber=${userPhoneNumberSearchParam}`;
@@ -217,6 +283,10 @@ async function addHrefNavigationPaths(userPhoneNumberSearchParam) {
   loginAnchors.forEach((anchor, _) => {
     anchor.href = userPhoneNumberSearchParam ?? '/login';
   });
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   const signupAnchors = document.querySelectorAll('.signup-anchor-btn');
   signupAnchors.forEach((anchor, _) => {
     anchor.href = userPhoneNumberSearchParam ?? "/signup";
@@ -224,6 +294,7 @@ async function addHrefNavigationPaths(userPhoneNumberSearchParam) {
 
   const logOutAnchors = document.querySelectorAll('.logout-anchor-btn');
   logOutAnchors.forEach((anchor, _) => {
+<<<<<<< HEAD
     // add home route without any logged in user as search param to simulate logout functionality
     anchor.href = `/home`;
   });
@@ -232,6 +303,12 @@ async function addHrefNavigationPaths(userPhoneNumberSearchParam) {
 
 
 /**************************Download report code********************************/
+=======
+    anchor.href = `/home`;
+  });
+}
+
+>>>>>>> master
 async function addDownloadReportListener() {
   document.getElementById('downloadReportButton').addEventListener('click', async (e) => {
     e.preventDefault();
@@ -264,7 +341,10 @@ async function addDownloadReportListener() {
       alert('An error occurred while downloading the PDF.');
     }
   });
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 }
 
 async function displayLocationOptions() {
@@ -277,10 +357,15 @@ async function displayLocationOptions() {
       const option = document.createElement('option');
       option.value = location.location_name;
       option.text = location.location_name;
+<<<<<<< HEAD
 
       selectElem.appendChild(option);
     });
 
+=======
+      selectElem.appendChild(option);
+    });
+>>>>>>> master
   } catch (error) {
     console.error('Error', error);
     alert(error);
@@ -290,6 +375,7 @@ async function displayLocationOptions() {
 function addLocationSelectionListener() {
   const selectElem = document.getElementById('location');
   selectElem.addEventListener('change', function (event) {
+<<<<<<< HEAD
     //let selectedLocationName = event.target.value;
     const downloadReportBtnElem = document.getElementById('downloadReportButton');
     downloadReportBtnElem.disabled = true;
@@ -299,3 +385,10 @@ function addLocationSelectionListener() {
 
 
 
+=======
+    const downloadReportBtnElem = document.getElementById('downloadReportButton');
+    downloadReportBtnElem.disabled = true;
+  });
+}
+
+>>>>>>> master

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraAly </title>
+    <link rel="stylesheet" href="credit_service_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <!-- <div class="logo-container">
+            <img src="https://via.placeholder.com/80" alt="TerraAly Logo" class="logo">
+        </div> -->
+        <h1 class="site-title"><span class="terra">Terra</span><span class="aly">Aly</span></h1>
+        <nav class="nav-links">
+            <a href="/crop_recommendation">Crop Recommendations</a> 
+            <a href="/credit_service">Credit</a> 
+            <a href="/blog">Blog</a> 
+            <a href="/about">About</a> 
+            <a href="/home">Logout</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 id="main-heading">Apply for Agricultural Credit</h1>
+
+        <section id="disclaimer" class="step">
+            <h2>Disclaimer</h2>
+            <p>This credit service is provided for informational purposes only and does not constitute financial advice. All applications are subject to approval based on eligibility criteria and credit assessment. Interest rates, terms, and conditions may vary. TerraAly is not liable for any losses or damages arising from the use of this service. Consult a professional financial advisor for personalized guidance. By using this service, you agree to our <a href="#" onclick="openTermsPopup(); return false;">terms and privacy policy</a>.</p>
+        </section>
+
+        <section id="benefits-eligibility" class="step">
+            <h2>Eligibility Criteria</h2>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Must be a Kenyan citizen with a valid ID or passport.</li>
+                <li><i class="fas fa-check-circle"></i> Own or operate a farm of at least 0.5 acres.</li>
+                <li><i class="fas fa-check-circle"></i> No adverse credit history with recognized bureaus.</li>
+                <li><i class="fas fa-check-circle"></i> Age between 18 and 65 years.</li>
+                <li><i class="fas fa-check-circle"></i> Provide proof of farming activity or cooperative membership.</li>
+            </ul>
+
+            <h2>Benefits of Our Credit Service</h2>
+            <ul>
+                <li><i class="fas fa-leaf"></i> Access to low-interest loans in KSH (starting at 5% p.a.).</li>
+                <li><i class="fas fa-leaf"></i> Flexible repayment plans tailored to your harvest cycles.</li>
+                <li><i class="fas fa-leaf"></i> Support for purchasing equipment, seeds, and irrigation systems.</li>
+            </ul>
+        </section>
+
+        <section id="additional-info" class="step">
+            <h2>Important Information</h2>
+            <ul>
+                <li><i class="fas fa-info-circle"></i> Risk Disclosure: Borrowing involves risks, including the possibility of default and loss of collateral. Ensure you can afford repayments before applying.</li>
+                <li><i class="fas fa-info-circle"></i> Interest Rates and Fees: Rates start at 5% per annum, with no hidden fees. Late payments may incur penalties up to 2% monthly.</li>
+                <li><i class="fas fa-info-circle"></i> Data Privacy: Your information is protected under Kenyan data protection laws. We may share it with credit bureaus for assessment.</li>
+                <li><i class="fas fa-info-circle"></i> Loan Terms: Loans range from KSH 1,000 to KSH 500,000, with repayment periods of 6-24 months. Collateral may be required for larger amounts.</li>
+                <li><i class="fas fa-info-circle"></i> Default Consequences: Non-payment may result in legal action, credit score impact, and forfeiture of assets.</li>
+                <li><i class="fas fa-info-circle"></i> Financial Counseling: We offer free counseling sessions to help with budgeting and repayment planning.</li>
+            </ul>
+        </section>
+
+        <section id="cta-section">
+            <button class="cta-button" onclick="openTermsPopup()">Apply for Credit Now</button>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-question">What is the minimum loan amount?</button>
+                <div class="faq-answer">
+                    <p>The minimum loan amount is KSH 1,000.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How long does it take to process a loan?</button>
+                <div class="faq-answer">
+                    <p>Loan processing typically takes 24 hours after verification.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What are the interest rates?</button>
+                <div class="faq-answer">
+                    <p>Interest rates range from 5% to 8% per annum, depending on loan size and repayment period.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="get-in-touch">
+            <h2>Get in Touch</h2>
+            <ul>
+                <li><i class="fas fa-envelope"></i> Email: <a href="mailto:terraalyfarming@gmail.com">terraalyfarming@gmail.com</a></li>
+                <li><i class="fas fa-phone"></i> Phone: +254 712 345 678</li>
+                <li><i class="fas fa-map-marker-alt"></i> Address: TerraAly Office, Nairobi, Kenya</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Terms and Policy Popup -->
+    <dialog id="termsPopup">
+        <div class="popup-content">
+            <h2>Terms and Privacy Policy</h2>
+            <p>Please read and agree to the following terms before proceeding with your application:</p>
+            <div class="terms-content">
+                <h3>Terms of Service</h3>
+                <p>1. Eligibility: By applying, you confirm you meet the criteria listed above and agree to provide accurate information.</p>
+                <p>2. Loan Agreement: Approved loans are subject to a formal contract with the lender. Repayment is mandatory as per the terms.</p>
+                <p>3. Liability: TerraAly acts as a facilitator and is not responsible for loan outcomes or disputes.</p>
+                <p>4. Changes: We reserve the right to update terms with notice.</p>
+
+                <h3>Privacy Policy</h3>
+                <p>1. Data Collection: We collect personal and farm data for credit assessment, including name, ID, location, and financial details.</p>
+                <p>2. Use and Sharing: Data is used for loan processing and shared with partners (e.g., credit bureaus, Saccos) under Kenyan laws.</p>
+                <p>3. Security: We use encryption and secure servers to protect your data.</p>
+                <p>4. Rights: You can request access, correction, or deletion of your data via terraalyfarming@gmail.com.</p>
+                <p>5. Cookies: Our site uses cookies for functionality; you can manage them in your browser.</p>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="agreeTerms" required aria-label="Terms agreement checkbox">
+                <label for="agreeTerms">I understand and agree to the Terms and Privacy Policy</label>
+            </div>
+            <button class="submit-button" onclick="proceedAfterTerms()">Proceed</button>
+            <button class="close-popup" onclick="closeTermsPopup()">Close</button>
+        </div>
+    </dialog>
+
+    <!-- Application Popup with Full Form -->
+    <dialog id="applicationPopup">
+        <div class="popup-content">
+            <form id="creditForm" class="credit-form" action="/submit-credit" method="POST">
+                <div id="personal-info" class="step" style="display: block;">
+                    <h2>Step 1: Personal Information</h2>
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="idNumber">National ID / Passport Number</label>
+                        <input type="text" id="idNumber" name="idNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Permanent Address</label>
+                        <textarea id="address" name="address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="nextOfKin">Next of Kin / Emergency Contact</label>
+                        <input type="text" id="nextOfKin" name="nextOfKin" required>
+                    </div>
+                    <button type="submit" class="submit-button">Next Step</button>
+                </div>
+            </form>
+
+            <form id="farmDetailsForm" class="credit-form" action="/submit-farm-details" method="POST">
+                <div id="farm-details" class="step" style="display: none;">
+                    <h2>Step 2: Farm Details</h2>
+                    <div class="form-group">
+                        <label for="farmLocation">Farm Location (village/town, county)</label>
+                        <input type="text" id="farmLocation" name="farmLocation" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="farmSize">Farm Size (in acres)</label>
+                        <input type="number" id="farmSize" name="farmSize" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="farmingType">Type of Farming (subsistence, commercial, cooperative)</label>
+                        <select id="farmingType" name="farmingType" required>
+                            <option value="">--Select Type--</option>
+                            <option value="subsistence">Subsistence</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="cooperative">Cooperative</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="cooperativeGroup" style="display: none;">
+                        <label for="cooperative">Cooperative Member</label>
+                        <select id="cooperative" name="cooperative" class="scrollable-dropdown">
+                            <option value="">--Select Cooperative--</option>
+                            <option value="Kiambu Coffee Growers Co-operative Union Ltd">Kiambu Coffee Growers Co-operative Union Ltd</option>
+                            <option value="Kiambu County Poultry Farmers' Cooperative Society">Kiambu County Poultry Farmers' Cooperative Society</option>
+                            <option value="Githunguri Dairy Farmers Co-operative Society">Githunguri Dairy Farmers Co-operative Society</option>
+                            <option value="Ndumberi Coffee Growers Co-operative Society">Ndumberi Coffee Growers Co-operative Society</option>
+                            <option value="Olenguruone Dairy Farmers Cooperative Society">Olenguruone Dairy Farmers Cooperative Society</option>
+                            <option value="Suka Farmers' Cooperative Society Ltd">Suka Farmers' Cooperative Society Ltd</option>
+                            <option value="Elburgon Dairy Cooperative">Elburgon Dairy Cooperative</option>
+                            <option value="Rurii Young Farmers Group">Rurii Young Farmers Group</option>
+                            <option value="Ponda Mali Umbrella Self-Help Group">Ponda Mali Umbrella Self-Help Group</option>
+                            <option value="Taunet Cooperative Society">Taunet Cooperative Society</option>
+                            <option value="Daraja Mungu Cooperative Society">Daraja Mungu Cooperative Society</option>
+                            <option value="Tulwoboy Dairy Co-operative Society">Tulwoboy Dairy Co-operative Society</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="primaryCrops">Primary Crops Grown</label>
+                        <input type="text" id="primaryCrops" name="primaryCrops" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="waterSource">Irrigation/Water Source (optional)</label>
+                        <input type="text" id="waterSource" name="waterSource">
+                    </div>
+                    <button type="submit" class="submit-button">Next Step</button>
+                </div>
+            </form>
+
+            <form id="attachmentForm" class="credit-form" action="/submit-attachments" method="POST" enctype="multipart/form-data">
+                <div id="attachments" class="step" style="display: none;">
+                    <h2>Step 3: Attachments & Verification</h2>
+                    <div class="form-group">
+                        <label for="idPhoto">Upload: ID / Passport Photo</label>
+                        <input type="file" id="idPhoto" name="idPhoto" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loanStatement">Upload: Existing Loan Statement (if applicable)</label>
+                        <input type="file" id="loanStatement" name="loanStatement" accept="application/pdf,image/*">
+                    </div>
+                    <button type="submit" class="submit-button">Next Step</button>
+                </div>
+            </form>
+
+            <form id="creditRequestForm" class="credit-form" action="/submit-credit-request" method="POST">
+                <div id="credit-request" class="step" style="display: none;">
+                    <h2>Step 4: Credit Request</h2>
+                    <div class="form-group">
+                        <label for="bankAccount">Bank Account / Mobile Money Number (for loan disbursement)</label>
+                        <input type="text" id="bankAccount" name="bankAccount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="repaymentMethod">Preferred Repayment Method</label>
+                        <select id="repaymentMethod" name="repaymentMethod" required>
+                            <option value="">--Select Method--</option>
+                            <option value="bank">Bank</option>
+                            <option value="mobile">Mobile</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-button">Next Step</button>
+                </div>
+            </form>
+
+            <form id="consentForm" class="credit-form" action="/submit-consent" method="POST">
+                <div id="consent" class="step" style="display: none;">
+                    <h2>Step 5: Consent & Declaration</h2>
+                    <div class="form-group">
+                        <input type="checkbox" id="declareTrue" name="declareTrue" required>
+                        <label for="declareTrue">I declare that the information provided is true and accurate.</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="consentData" name="consentData" required>
+                        <label for="consentData">I consent to the use of my data for credit assessment and reporting to credit bureaus.</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="agreeTermsApp" name="agreeTermsApp" required>
+                        <label for="agreeTermsApp">I agree to the terms and conditions of the agricultural credit program.</label>
+                    </div>
+                    <button type="submit" class="submit-button">Submit Application</button>
+                </div>
+            </form>
+            <button class="close-popup" onclick="closeApplicationPopup()">Close</button>
+        </div>
+    </dialog>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- <div class="footer-logo">
+                <img src="https://via.placeholder.com/60" alt="TerraAly Logo" class="footer-logo-img"> -->
+                <!-- <p>TerraAly - Empowering farmers with credit and innovation.</p> -->
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/crop_recommendation">Crop Recommendations</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:terraalyfarming@gmail.com">terraalyfarming@gmail.com</a></p>
+                <p>Location: Nairobi, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="credit_service_script.js"></script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import cors from 'cors';
+
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import authRoutes from './backend/routes/auth.js';
@@ -11,6 +12,8 @@ import reportRoutes from './backend/routes/reports.js';
 import mailRoutes from './backend/routes/mails.js';
 import locationRouters from './backend/routes/locations.js';
 import soilRouters from './backend/routes/soil.js';
+
+import creditRoutes from './backend/routes/credit.js';
 import db_connection from './connection.js';
 
 
@@ -27,6 +30,9 @@ app.use('/mails', mailRoutes);
 app.use('/locations', locationRouters);
 app.use('/soil', soilRouters);
 
+app.use('/credit', creditRoutes)
+
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -40,6 +46,10 @@ app.use('/backend/profile_uploads', express.static(path.join(__dirname, '/backen
 
 // serves static uploaded emails attachment when a request starts with /mail_attachment_uploads
 app.use('/backend/mail_attachment_uploads', express.static(path.join(__dirname, '/backend/mail_attachment_uploads')));
+
+
+// serves static credit uploads
+app.use('/backend/credit_uploads', express.static(path.join(__dirname, '/backend/credit_uploads')));
 
 // home page
 app.use(express.static(path.join(__dirname, 'frontend/home')));
@@ -85,6 +95,18 @@ app.get('/crop_recommendation', (req, res) => {
     // if (phoneNumber === undefined) res.redirect('/login');
     res.sendFile(path.join(__dirname, 'frontend/crop_recommendation/index.html'));
 });
+
+
+// credit service page
+app.use(express.static(path.join(__dirname, 'frontend/credit_service')));
+app.get('/credit_service', (req, res) => {
+    const { phoneNumber } = req.query;
+    if (!phoneNumber) {
+        return res.redirect('/login'); // Redirect if no phone number is provided
+    }
+    res.sendFile(path.join(__dirname, 'frontend/credit_service/index.html'));
+});
+
 
 // admin page
 app.use(express.static(path.join(__dirname, 'frontend/admin_dashboard')));

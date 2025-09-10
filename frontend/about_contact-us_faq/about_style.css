@@ -38,13 +38,23 @@ body {
 }
 
 .site-title {
-    color: #708238; /* Olive Green */
-    font-size: 2.5em;
-    font-family: 'Georgia', serif; /* Beautiful font */
-    font-weight: bold;
-    margin: 0;
-    flex-grow: 1;
-    text-align: left;
+
+  color: #708238; /* Olive Green */
+  font-size: 2.5em;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin: 0;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.terra {
+  color: #708238;
+}
+
+.aly {
+  color: #28A745; /* Adjusted green-blue */
+
 }
 
 .nav-links {

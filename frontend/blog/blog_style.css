@@ -36,11 +36,28 @@ body, html {
 .site-title {
     color: #708238; /* Olive Green */
     font-size: 2.5em;
+<<<<<<< HEAD
     font-family: 'Georgia', serif; /* Beautiful font */
     font-weight: bold;
     margin: 0;
     flex-grow: 1;
     text-align: left;
+=======
+    font-family: 'Poppins', serif;
+    font-weight: bold;
+    margin: 0;
+    flex-grow: 1;
+    text-align:left;
+}
+
+.terra {
+  color: #708238;
+  font-family: 'Merriweather', serif;
+}
+
+.aly {
+  color: #28A745; /* Adjusted green-blue */
+>>>>>>> master
 }
 
 .nav-links {

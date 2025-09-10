@@ -63,6 +63,18 @@ body, html {
     text-decoration: underline;
 }
 
+<<<<<<< HEAD
+=======
+/* Specific anchor button styles */
+.signup-anchor-btn, .login-anchor-btn, .crop-recom-anchor-btn, .credit-service-anchor-btn, .soil-anchor-btn, .community-anchor-btn {
+    color: #708238;
+}
+
+.signup-anchor-btn:hover, .login-anchor-btn:hover, .crop-recom-anchor-btn:hover, .credit-service-anchor-btn:hover, .soil-anchor-btn:hover, .community-anchor-btn:hover {
+    color: #D2B48C;
+}
+
+>>>>>>> master
 .crop-content, .signup-form, .login-form {
     flex: 1 0 auto;
     max-width: 1200px;
@@ -130,6 +142,7 @@ body, html {
     text-decoration: underline;
 }
 
+<<<<<<< HEAD
 .admin-controls {
     margin-bottom: 1em;
     text-align: center;
@@ -280,6 +293,31 @@ input[type="password"]:focus {
 .search-filter input, .search-filter select {
     padding: 8px;
     margin: 0 0.5em;
+=======
+/* Admin Dashboard Styles */
+.admin-dashboard {
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard h2 {
+    color: #708238;
+    margin-bottom: 1em;
+}
+
+.search-filter {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1.5em;
+}
+
+.search-filter input, .search-filter select {
+    padding: 0.5em;
+>>>>>>> master
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #FAF3E0; /* Soft Cream */

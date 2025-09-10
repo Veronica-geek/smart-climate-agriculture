@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <header class="header">
     <div class="logo-container">
         <img src="../media/Logo black.png" alt="TerraAly Logo" class="logo">
@@ -41,3 +42,84 @@
         </div>
     </div>
 </footer>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TerraAly - Powering growth one farm at a time.">
+    <meta name="author" content="TerraAly Team">
+    <title>TerraAly Home</title>
+    <link rel="stylesheet" href="h_f_style.css">
+    <link rel="icon" type="image/png" href="/media/terraaly_logo.png">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="/media/terraaly_logo.png" alt="TerraAly Logo" class="logo">
+        </div>
+        <h1 class="site-title">TerraAly</h1>
+        <nav class="nav-links" id="navLinks">
+            <!-- Links will be populated by JavaScript -->
+        </nav>
+    </header>
+
+    <main class="crop-content">
+        <div class="content-section">
+            <h2>Welcome to TerraAly</h2>
+            <p>This is the home page content. Add your sections here.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <p>Contact: terraalyfarming@gmail.com</p>
+            </div>
+
+            <div class="social-media">
+                <img src="/media/social_facebook.png" alt="Facebook" class="social-icon">
+                <img src="/media/social_twitter.png" alt="Twitter" class="social-icon">
+                <img src="/media/social_instagram.png" alt="Instagram" class="social-icon">
+            </div>
+
+            <div class="quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/signup" class="signup-anchor-btn">Sign Up</a></li>
+                    <li><a href="/login" class="login-anchor-btn">Login</a></li>
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="/soilhealthanalyser" class="soil-anchor-btn">Soil Health Analyser</a></li>
+                    <li><a href="/community" class="community-anchor-btn">Community</a></li>
+                </ul>
+            </div>
+
+            <div class="location">
+                <p>Location: Nairobi, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.getElementById('navLinks');
+            const urlParams = new URLSearchParams(window.location.search);
+            const phoneNumber = urlParams.get('phoneNumber');
+
+            const links = [
+                { href: '/signup', text: 'Sign Up', class: 'signup-anchor-btn' },
+                { href: '/login', text: 'Login', class: 'login-anchor-btn' },
+                { href: phoneNumber ? `/crop_recommendation?phoneNumber=${phoneNumber}` : '/crop_recommendation', text: 'Crop Recommendations', class: 'crop-recom-anchor-btn' },
+                { href: phoneNumber ? `/credit_service?phoneNumber=${phoneNumber}` : '/credit_service', text: 'Credit Service', class: 'credit-service-anchor-btn' },
+                { href: phoneNumber ? `/soilhealthanalyser?phoneNumber=${phoneNumber}` : '/soilhealthanalyser', text: 'Soil Health Analyser', class: 'soil-anchor-btn' },
+                { href: phoneNumber ? `/community?phoneNumber=${phoneNumber}` : '/community', text: 'Community', class: 'community-anchor-btn' }
+            ].map(link => `<a href="${link.href}" class="${link.class}">${link.text}</a> |`).join(' ');
+
+            navLinks.innerHTML = links.slice(0, -2); // Remove the last '|' separator
+        });
+    </script>
+</body>
+</html>
+>>>>>>> master
