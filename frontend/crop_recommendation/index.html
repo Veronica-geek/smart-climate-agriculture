@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TerraAly Crop Recommendation Tool for farming solutions.">
+    <meta name="author" content="TerraAly Team">
+    <title>Crop Recommendation</title>
+    <script type="module" src="./c_recom_script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="c_recom_style.css">
+    <link rel="icon" type="image/png" href="/media/terraaly_logo.png">
+</head>
+<body>
+    <header class="header">
+        <!-- <div class="logo-container">
+            <img src="/media/terraaly_logo.png" alt="TerraAly Logo" class="logo">
+        </div> -->
+        <h1 class="site-title"><span class="terra">Terra</span><span class="aly">Aly</span></h1>
+   
+        <nav class="nav-links">
+            <a href="#" class="home-anchor-btn">Home </a>
+            <a href="#" class="blog-anchor-btn">Blog</a> 
+            <a href="#" class="credit-service-anchor-btn">Credit</a>
+            <a href="#" class="about-anchor-btn">About</a> 
+            <a href="#" class="logout-anchor-btn">Logout</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Crop Recommendation</h1>
+        <form id="locationForm" class="recom-button">
+            <div class="location-selection">
+                <input type="text" id="locationSearch" placeholder="Search locations..." class="location-search">
+                <select id="location" class="location-dropdown">
+                    <option value="">--Choose a Location--</option>
+                    <!-- Location options will be populated by JavaScript -->
+                </select>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="crop-recom-button">Show crop recommendation for my location</button>
+                <button id="downloadReportButton" class="download-report-button" disabled>Download Report</button>
+            </div>
+        </form>
+
+        <div class="results-container">
+            <section class="section" id="weather">
+                <h2>Current Weather</h2>
+                <!-- Weather data will be populated by JavaScript -->
+            </section>
+            <section class="section" id="soil">
+                <h2>Soil Information</h2>
+                <!-- Soil data will be populated by JavaScript -->
+            </section>
+            <section class="section" id="crops">
+                <h2>Suitable Crops</h2>
+                <!-- Crops data will be populated by JavaScript -->
+            </section>
+            <section class="section" id="chart">
+                <h2>Average Time to Harvest for the Suitable crops</h2>
+                <canvas id="cropSuitabilityChart"></canvas>
+            </section>
+        </div>
+    </main>
+
+    <div id="spinner-overlay" class="spinner-overlay" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <dialog id="profileDialog">
+        <form id="profileForm">
+            <div class="profile-container">
+                <div class="profile-image" id="profileImageContainer">
+                    <img src="/media/profile_image_placeholder.png" alt="Profile Image" id="profile-img">
+                </div>
+                <div class="profile-name" id="profile_name">User</div>
+                <button id="open_dialog_button">+</button>
+            </div>
+            <input type="text" id="newUsername" placeholder="New Username" class="dialog-input">
+            <input type="file" id="newProfileImage" accept="image/*" class="dialog-input">
+            <button type="submit" id="upload_profile_btn">Update</button>
+            <button type="button" id="close_dialog_button">Cancel</button>
+        </form>
+    </dialog>
+
+    <div id="overlay" class="overlay hidden">
+        <div id="deactivationMessage">Your account has been deactivated by the admin.</div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <!--  <div class="footer-logo">
+                <img src="/media/terraaly_logo.png" alt="TerraAly Logo" class="footer-logo-img">
+                <p>TerraAly - Growing a sustainable future, one farm at a time.</p> 
+            <div class="footer-links">-->
+            </div> 
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#" class="about-anchor-btn">About</a></li>
+                    <li><a href="#" class="home-anchor-btn">Home</a></li>
+                    <li><a href="#" class="blog-anchor-btn">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: terraalyfarming@gmail.com</p>
+                <p>Location: Nairobi, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./bar_chart_script.js"></script>
+</body>
+</html>

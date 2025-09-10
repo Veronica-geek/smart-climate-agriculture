@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - TerraAly</title>
+    <script src="./ad_script.js"></script>
+    <script src="./file_upload_script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="ad_style.css">
+</head>
+
+<body>
+    <div class="admin-dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="media/transparent_without_m.png" alt="TerraAly Logo" class="sidebar-logo">
+                <h2>TerraAly Admin</h2>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="#accounts" class="menu-item">Account Management</a>
+                <a href="#content" class="menu-item">Content Management</a>
+                <a href="#soil-data" class="menu-item">Soil Data</a>
+                <!-- <a href="#weather-forecast" class="menu-item">Weather Forecast</a> -->
+                <a href="#reports" class="menu-item">Reports</a>
+                <!-- <a href="#performance" class="menu-item">Performance</a> -->
+                <!-- <a href="#profile" class="menu-item">Profile</a> -->
+            </nav>
+            <!-- Weather Widget in Sidebar -->
+            <div class="weather-widget-sidebar">
+                <h3>Today's Weather</h3>
+                <p id="sidebarWeather">Nairobi: 26°C, Sunny</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="logo-container">
+                    <img src="/media/transparent_without_m.png" alt="TerraAly Logo" class="logo">
+                </div>
+                <h1 class="site-title">TerraAly</h1>
+                <nav class="nav-links">
+                    <a class="logout-anchor-btn" href="">Logout</a>
+                </nav>
+            </header>
+            <header class="admin-header">
+                <h1>Admin Dashboard</h1>
+                <div class="admin-header-right">
+                    <!-- <div class="notification-icon" id="notificationIcon">🔔</div> -->
+                    <!-- <div class="user-profile">
+                        <img src="profile-placeholder.png" alt="Profile" class="profile-image" id="profileImage">
+                        <span>Welcome, Admin</span>
+                    </div> -->
+                    <div class="profile-container">
+                        <div id="profileImageContainer" class="profile-image">
+                            <img id="profile-img" src="/media/profile_image_placeholder.png" alt="Profile Image">
+                            <button id="open_dialog_button">+</button>
+                        </div>
+                        <div id="profile_name" class="profile-name"></div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Account Management -->
+            <section class="admin-section" id="accounts">
+                <h2>Account Management</h2>
+                <div class="card">
+                    <h3>Users</h3>
+                    <ul id="userList">
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Content Management -->
+            <section class="admin-section" id="content">
+                <h2>Content Management</h2>
+                <div class="card">
+                    <h3>Manuals & Tips</h3>
+                    <input type="file" id="uploadContent" accept=".pdf,.docx">
+                    <button class="action-btn" id="upload_button">Upload</button>
+                    <ul id="contentList">
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Soil Data -->
+            <section class="admin-section" id="soil-data">
+                <h2>Soil Data</h2>
+                <div class="card">
+                    <h3>Update Soil Data</h3>
+                    <form id="soil_data_update_form" action="">
+                        <div id="location_input_container">
+                            <label for="location">Location:</label>
+                            <select id="location" required>
+                                <option value="">--Choose a Location--</option>
+                                <!-- location will be dynamically added -->
+                            </select>
+                            <!-- <input type="text" id="soilLocation" placeholder="Location" required> -->
+                        </div>
+                        <div id="ph_min_input_container">
+                            <label for="ph_min">pH min:</label>
+                            <input type="number" id="ph_min" class="soil_input" placeholder="Min pH Level" step="0.1"
+                                required>
+                        </div>
+                        <div id="ph_max_input_container">
+                            <label for="ph_max">pH max:</label>
+                            <input type="number" id="ph_max" class="soil_input" placeholder="Max pH Level" step="0.1"
+                                required>
+                        </div>
+                        <div id="moisture_content_min_input_container">
+                            <label for="moisture_content_min">moisture content min:</label>
+                            <input type="number" id="moisture_content_min" class="soil_input"
+                                placeholder="moisture content min Level" step="1" required>
+                        </div>
+                        <div id="moisture_content_max_input_container">
+                            <label for="moisture_content_max">moisture content max:</label>
+                            <input type="number" id="moisture_content_max" class="soil_input"
+                                placeholder="moisture content max Level" step="1" required>
+                        </div>
+                        <button id="submit_soil_update_btn" class="action-btn">Update</button>
+                    </form>
+
+                    <!-- <ul id="soilDataList">
+                        <li>Location1: pH 6.5 <button class="action-btn"
+                                onclick="deleteSoilData('Location1')">Delete</button></li>
+                    </ul> -->
+                    <!-- 
+                    <div class="weather-widget">
+                        <h3>Weather Forecast (Next 3 Days)</h3>
+                        <div id="weatherForecast">
+                            <p>Day 1: 26°C, Sunny</p>
+                            <p>Day 2: 24°C, Cloudy</p>
+                            <p>Day 3: 22°C, Rainy</p>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+
+            <!-- Weather Forecast Section -->
+            <!-- <section class="admin-section" id="weather-forecast">
+                <h2>Weather Forecast</h2>
+                <div class="card">
+                    <h3>Weather Overview</h3>
+                    <div class="weather-widget">
+                        <div id="detailedWeatherForecast">
+                            <p>Day 1: 26°C, Sunny</p>
+                            <p>Day 2: 24°C, Cloudy</p>
+                            <p>Day 3: 22°C, Rainy</p>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- <div class="report-container">
+                <h2>Generate Reports</h2>
+                <div class="report-buttons">
+                    <button id="generateReportButton">Generate Soil Health Report</button>
+                    <button id="downloadReportButton" disabled>Download Soil Health Report</button>
+                </div>
+                <div id="reportContent" class="report-content"></div>
+                <canvas id="soilHealthChart" style="max-width: 100%; margin-top: 20px;"></canvas>
+            </div> -->
+            <div id="reports" class="report-container">
+                <h2>Generate Reports</h2>
+                <div class="report-buttons">
+                    <button id="generateReportButton" class="action-btn">Generate Soil Health Report</button>
+                    <button id="downloadReportButton" class="action-btn" disabled>Download Report</button>
+                </div>
+
+                <div id="loadingSpinner" class="loading-spinner hidden"></div>
+
+                <div id="reportContent" class="report-content"></div>
+                <div id="pagination" class="pagination"></div>
+                <canvas id="soilHealthChart" style="max-width: 100%; margin-top: 20px;"></canvas>
+
+
+            </div>
+
+
+            <!-- Performance -->
+            <!-- <section class="admin-section" id="performance">
+                <h2>Site Performance</h2>
+                <div class="card">
+                    <h3>Performance Metrics</h3>
+                    <p>Uptime: 99.9% | Load Time: 1.2s</p>
+                    <canvas id="performanceChart" width="400" height="200"></canvas>
+                </div>
+            </section>
+        </main> -->
+    </div>
+    <footer>
+        <p>&copy; 2025 TerraAly. All rights reserved.</p>
+    </footer>
+    <!-- User Profile Dialog  -->
+    <dialog id="profileDialog">
+        <h2>Update Profile</h2>
+        <form id="updateProfileForm">
+            <label for="newUsername">Username:</label>
+            <input type="text" id="newUsername" name="username" required>
+            <label for="newProfileImage">Profile Image:</label>
+            <input type="file" id="newProfileImage" name="profileImage" accept="image/*" required>
+            <button id="upload_profile_btn" class="dialog_btn" type="upload_profile">Update</button>
+            <button id="close_dialog_button" class="dialog_btn" type="cancel_dialog_btn">Cancel</button>
+        </form>
+    </dialog>
+</body>
+
+</html>

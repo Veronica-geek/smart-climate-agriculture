@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - TerraAly</title>
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="./community_style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="/media/logo.png" alt="TerraAly Logo" class="logo">
+        </div>
+        <h1 class="site-title">TerraAly</h1>
+        <nav class="nav-links">
+            <a href="/home">Home</a> |
+            <a href="/crop_recommendation">Crop Recommendations</a> |
+            <a href="/soil_health_analyser">Soil Health Analyser</a> |
+            <a href="/weather_insight">Weather insight</a>|
+            <a href="/login">Existing user? login</a>
+        </nav>
+    </header>
+
+    <main class="community-content">
+        <!-- Primary Navigation Bar -->
+        <nav class="primary-nav">
+            <a href="#forum-rules" class="nav-item">Forum Rules</a>
+            <a href="#forums" class="nav-item">Forums</a>
+            <a href="#clubs" class="nav-item">Clubs</a>
+            <a href="#resources" class="nav-item">Resources & Help Center</a>
+        </nav>
+
+        <!-- Secondary Navigation Bar -->
+        <nav class="secondary-nav">
+            <a href="#new-users" class="nav-item">New Users</a>
+            <a href="#from-community" class="nav-item">From the Community</a>
+            <a href="#TerraAly-wins" class="nav-item">TerraAly Wins</a>
+            <a href="#from-team" class="nav-item">From the TerraAly Team</a>
+        </nav>
+
+        <!-- New Post Form -->
+        <section class="content-section" id="new-post">
+            <h2>Add a New Post</h2>
+            <form id="post-form" enctype="multipart/form-data">
+                <textarea id="post-content" placeholder="Write your post..." rows="4" required></textarea>
+                <input type="file" id="post-image" accept="image/*">
+                <button type="submit" class="submit-btn">Post</button>
+            </form>
+        </section>
+
+        <!-- Posts Section -->
+        <section class="content-section" id="forums">
+            <h2>Forums</h2>
+            <div id="posts-container">
+                <!-- Posts will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Other Sections (placeholders) -->
+        <section class="content-section" id="forum-rules">
+            <h2>Forum Rules</h2>
+            <p>Guidelines for participating in the TerraAly community. Respect others, stay on topic, and report
+                issues...</p>
+        </section>
+
+        <section class="content-section" id="clubs">
+            <h2>Clubs</h2>
+            <p>Join farmer clubs for networking and support. <a href="#clubs">Find a club near you!</a></p>
+        </section>
+
+        <section class="content-section" id="resources">
+            <h2>Resources & Help Center</h2>
+            <p>Access guides, tutorials, and support. <a href="#resources">Explore resources!</a></p>
+        </section>
+
+        <section class="content-section" id="new-users">
+            <h2>New Users</h2>
+            <p>Welcome! Get started with TerraAly community tips for new farmers...</p>
+        </section>
+
+        <section class="content-section" id="from-community">
+            <h2>From the Community</h2>
+            <p>Check out success stories and advice from fellow farmers...</p>
+        </section>
+
+        <section class="content-section" id="TerraAly-wins">
+            <h2>TerraAly Wins</h2>
+            <p>Celebrate achievements with TerraAly's farming community...</p>
+        </section>
+
+        <section class="content-section" id="from-team">
+            <h2>From the TerraAly Team</h2>
+            <p>Updates and announcements from the TerraAly team...</p>
+        </section>
+
+        <!-- All Activity Link -->
+        <div class="all-activity">
+            <a href="#">All Activity</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><strong>Contact:</strong> <a href="mailto:terraalyfarming@gmail.com">terraalyfarming@gmail.com</a></p>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com" target="_blank"><img src="/media/instagram.png" alt="Instagram"
+                        class="social-icon"></a>
+                <a href="https://www.youtube.com" target="_blank"><img src="/media/youtube.png" alt="YouTube"
+                        class="social-icon"></a>
+                <a href="mailto:terraalyfarming@gmail.com"> <img src="/media/email.png" alt="email"
+                    class="social-icon"></a>
+            <div class="quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/signup">Sign Up</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/crop-recommendation#articles">Articles</a></li>
+                    <li><a href="/crop-recommendation#videos">Videos</a></li>
+                    <li><a href="/soil_health_analyser">Soil Health Analyser</a>
+                    <li>
+                    <li><a href="/weather_insight">Weather insight</a></li>
+                    <li><a href="/community">Community</a></li>
+                </ul>
+            </div>
+            <div class="location">
+                <p><strong>Location:</strong> Nairobi, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
